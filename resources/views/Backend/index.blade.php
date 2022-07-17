@@ -1,6 +1,6 @@
 @extends('Backend.layouts.master')
 @section('title')
-
+Dashboard
 @endsection
 @section('content')
 <!-- Container Fluid-->
@@ -325,7 +325,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                    <a href="login.html" class="btn btn-primary">Logout</a>
+                    <a href="" class="btn btn-primary">Logout</a>
                 </div>
             </div>
         </div>
