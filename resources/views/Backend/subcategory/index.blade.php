@@ -1,6 +1,6 @@
 @extends('Backend.layouts.master')
 @section('title')
-    All Categories
+    All Subcategories
 @endsection
 @section('content')
     <div class="container-fluid" id="container-wrapper">
@@ -8,8 +8,8 @@
             <h1 class="h3 mb-0 text-gray-800">Category Tables</h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                <li class="breadcrumb-item">Category</li>
-                <li class="breadcrumb-item active" aria-current="page">category Tables</li>
+                <li class="breadcrumb-item">Subategory</li>
+                <li class="breadcrumb-item active" aria-current="page">Subcategory Tables</li>
             </ol>
         </div>
 
@@ -18,38 +18,38 @@
                 <!-- Simple Tables -->
                 <div class="card">
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">All Categories</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">All Subcategories</h6>
                     </div>
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
                                 <th>SN</th>
-                                <th>Image</th>
+
                                 <th>Name</th>
-                                <th>Description</th>
+                                <th>Category</th>
                                 <th>Action</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
                             @php($i=1)
-                                @foreach($categories as $Category)
+                                @foreach($subcategories as $SubCategory)
                                     <tr>
 
                                         <td><a href="#">{{$i++}}</a></td>
-                                        <td><img src="{{Storage::url($Category->image)}}" width="100"></td>
-                                        <td>{{$Category->name}}</td>
-                                        <td>{{$Category->description}}</td>
+
+                                        <td>{{$SubCategory->name}}</td>
+                                        <td>{{$SubCategory->category->name}}</td>
 
                                         <td>
-                                            <a href="{{route('category.edit',[$Category->id])}}" class="btn btn-sm btn-primary">Edit</a>
-                                            <a href="{{route('category.destroy',[$Category->id])}}" class="btn btn-sm btn-danger">Delete</a>
+                                            <a href="{{route('subcategory.edit',[$SubCategory->id])}}" class="btn btn-sm btn-primary">Edit</a>
+                                            <a href="{{route('subcategory.destroy',[$SubCategory->id])}}" class="btn btn-sm btn-danger">Delete</a>
+
 
                                         </td>
                                     </tr>
                                 @endforeach
-
 
 
                             </tbody>
