@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Frontend\FrontProductListController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Frontend
+Route::get('/',[FrontProductListController::class,'index']);
+Route::get('/product/{id}',[FrontProductListController::class,'show'])->name('product.view');
+Route::get('/category/{name}',[FrontProductListController::class,'allProduct'])->name('product.list');
+Route::get('all/products',[FrontProductListController::class,'moreProducts'])->name('more.product');
 Auth::routes();
 //Dashboard
 Route::get('/home', [HomeController::class, 'index'])->name('home');
