@@ -21,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 //Dashboard
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::group(['prefix'=>'auth','middleware'=>['auth','isAdmin']],function(){
+    Route::get('/dashboard', function () {
+        return view('Backend.index');
+    });
 //Category
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
 Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
@@ -44,3 +48,5 @@ Route::post('/product/store', [ProductController::class, 'store'])->name('produc
 Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
 Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+
+});

@@ -88,13 +88,23 @@
             </div>
         </div>
     </li>
+    <hr>
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span>
+        <a class="dropdown-item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+
         </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+
+
+
     </li>
     <hr class="sidebar-divider">
-    <div class="version" id="version-ruangadmin"></div>
 </ul>
 <!-- Sidebar -->
