@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
@@ -35,3 +36,11 @@ Route::post('/subcategory/store', [SubCategoryController::class, 'store'])->name
 Route::get('/subcategory/edit/{id}', [SubCategoryController::class, 'edit'])->name('subcategory.edit');
 Route::post('/subcategory/update/{id}', [SubCategoryController::class, 'update'])->name('subcategory.update');
 Route::get('/subcategory/destroy/{id}', [SubCategoryController::class, 'destroy'])->name('subcategory.destroy');
+
+//Product
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+Route::get('/product/destroy/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
