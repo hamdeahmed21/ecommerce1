@@ -63,28 +63,48 @@
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="ui-colors.html">
-            <i class="fas fa-fw fa-palette"></i>
-            <span>UI Colors</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap3"
+           aria-expanded="true" aria-controls="collapseBootstrap3">
+            <i class="far fa-fw fa-window-maximize"></i>
+            <span>Slider</span>
         </a>
-    </li>
-    <hr class="sidebar-divider">
-    <div class="sidebar-heading">
-        Examples
-    </div>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
-           aria-controls="collapsePage">
-            <i class="fas fa-fw fa-columns"></i>
-            <span>Pages</span>
-        </a>
-        <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+        <div id="collapseBootstrap3" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Example Pages</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
+                <h6 class="collapse-header">Slider </h6>
+                <a class="collapse-item" href="{{route('slider.index')}}">View</a>
+                <a class="collapse-item" href="{{route('slider.create')}}">Create</a>
+
+            </div>
+        </div>
+    </li>
+    <hr>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap5"
+           aria-expanded="true" aria-controls="collapseBootstrap5">
+            <i class="far fa-fw fa-window-maximize"></i>
+            <span>User Order</span>
+        </a>
+        <div id="collapseBootstrap5" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Order </h6>
+                <a class="collapse-item" href="{{route('order.index')}}">View</a>
+
+
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
+           aria-expanded="true" aria-controls="collapseBootstrap4">
+            <i class="far fa-fw fa-window-maximize"></i>
+            <span>Users</span>
+        </a>
+        <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Users </h6>
+                <a class="collapse-item" href="{{route('user.index')}}">View all users</a>
+
+
             </div>
         </div>
     </li>
